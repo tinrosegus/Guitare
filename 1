@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logos Interactifs</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+        }
+        .logo {
+            display: inline-block;
+            margin: 20px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .logo img {
+            max-width: 100px;
+            height: auto;
+        }
+        .logo:hover {
+            transform: scale(1.1);
+        }
+        .message {
+            display: none;
+            font-size: 1.2em;
+            color: #333;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Découvrez les messages cachés</h1>
+    <div class="logo" onclick="showMessage('message1')">
+        <img src="logo1.png" alt="Logo 1">
+        <div id="message1" class="message">Message derrière le logo 1</div>
+    </div>
+    <div class="logo" onclick="showMessage('message2')">
+        <img src="logo2.png" alt="Logo 2">
+        <div id="message2" class="message">Message derrière le logo 2</div>
+    </div>
+    <div class="logo" onclick="showMessage('message3')">
+        <img src="logo3.png" alt="Logo 3">
+        <div id="message3" class="message">Message derrière le logo 3</div>
+    </div>
+    <script>
+        function showMessage(id) {
+            const message = document.getElementById(id);
+            message.style.display = message.style.display === 'none' || !message.style.display ? 'block' : 'none';
+        }
+    </script>
+</body>
+</html>
